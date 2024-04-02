@@ -7,8 +7,8 @@ from sklearn.model_selection import train_test_split
 
 
 
-df = pd.read_csv(r'diabetes.csv')
-st.title('Diabetes Checkup')
+df = pd.read_csv(r'tf.csv')
+st.title('Heart Disease Checkup')
 
 st.subheader('Training Data')
 st.write(df.describe())
@@ -16,7 +16,7 @@ st.write(df.describe())
 st.subheader('Visualisation')
 st.bar_chart(df)
 
-x = df.drop(['Outcome'],axis=1)
+x = df.drop(['result'],axis=1)
 y = df.iloc[:,-1]
 
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size = 0.2, random_state = 0)
